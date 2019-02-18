@@ -1,0 +1,24 @@
+{
+  "name": "graphql-tutorial",
+  "version": "0.0.1",
+  "description": "A tutorial implementing grapqhl with node and firebase",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --api/tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtotodev05/node-graphql-tutorial.git"
+  },
+  "keywords": [
+    "node",
+    "grapqhl",
+    "firebase"
+  ],
+  "author": "Kamau Brian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtotodev05/node-graphql-tutorial/issues"
+  },
+  "homepage": "https://github.com/mtotodev05/node-graphql-tutorial#readme"
+}
