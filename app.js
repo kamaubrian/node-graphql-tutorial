@@ -6,6 +6,7 @@ require('dotenv').config();
 const firebaseAdmin = require('firebase-admin');
 const serviceAccount = require('./api/config/service-account');
 const bodyParser = require('body-parser');
+const routes = require('./api/routes/index');
 
 firebaseAdmin.initializeApp({
     credential: firebaseAdmin.credential.cert(serviceAccount),
@@ -28,8 +29,13 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
+app.use('/api/v1', routes);
 
 
+app.use('/favicon.ico', (req, res, next) => {
+    console.log('Handling route error0')
+    next()
+})
 app.use((req, res, next) => {
     const error = new Error('Route Not Found');
     error.status = 404;
@@ -46,7 +52,6 @@ app.use((err, req, res) => {
         }
     })
 });
-
 
 
 module.exports = app;
