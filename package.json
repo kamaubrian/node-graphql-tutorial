@@ -2,9 +2,10 @@
   "name": "graphql-tutorial",
   "version": "0.0.1",
   "description": "A tutorial implementing grapqhl with node and firebase",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 30000 --exit api/**/test/*.js",
+    "lint": "eslint .",
     "start": "node server.js",
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
@@ -41,7 +42,9 @@
     "chai": "^4.2.0",
     "expect": "^24.1.0",
     "mocha": "^5.2.0",
-    "supertest": "^3.4.2"
+    "supertest": "^3.4.2",
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1"
   },
   "compilerOptions": {
     "target": "es2017",
