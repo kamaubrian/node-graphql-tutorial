@@ -4,7 +4,12 @@
   "description": "A tutorial implementing grapqhl with node and firebase",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --timeout 30000 --exit api/**/test/*.js"
+    "test": "mocha --timeout 30000 --exit api/**/test/*.js",
+    "start": "node server.js",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
   },
   "repository": {
     "type": "git",
@@ -37,5 +42,14 @@
     "expect": "^24.1.0",
     "mocha": "^5.2.0",
     "supertest": "^3.4.2"
+  },
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": [
+      "es2017"
+    ]
+  },
+  "engines": {
+    "node": "8"
   }
 }
