@@ -13,6 +13,12 @@ firebaseAdmin.initializeApp({
     databaseURL: "https://node-grapqhl-api.firebaseio.com"
 });
 
+const graphqlResolvers = require('./api/grapqhl/resolvers/index');
+const graphqlSchemas = require('./api/grapqhl/schemas/Post');
+const graphlHttp = require('express-graphql');
+
+
+
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers",
@@ -31,6 +37,11 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/api/v1', routes);
 
+app.use('/api/v1/graphql', graphlHttp({
+    schema: graphqlSchemas,
+    rootValue: graphqlResolvers,
+    graphiql: true
+}));
 
 app.use('/favicon.ico', (req, res, next) => {
     console.log('Handling route error0')

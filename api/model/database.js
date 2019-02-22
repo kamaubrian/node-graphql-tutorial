@@ -6,3 +6,4 @@ database.settings(settings);
 const databaseCollection = database.collection('posts');
 
 
+module.exports = databaseCollection;

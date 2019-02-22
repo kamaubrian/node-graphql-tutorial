@@ -9,5 +9,25 @@ module.exports = buildSchema(
                 author: String!
                 date:String!
             }
+
+            input PostInput {
+                title: String!
+                description: String!,
+                author: String!
+                date: String!
+            }
+
+            type RootQuery{
+                posts: [Post!]!
+            }
+
+            type RootMutation {
+                createPost(postInput: PostInput):Post
+            }
+
+            schema {
+                query: RootQuery
+                mutation: RootMutation
+            }
     `
 );
