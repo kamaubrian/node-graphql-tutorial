@@ -11,6 +11,7 @@
     "shell": "firebase functions:shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
+
   },
   "repository": {
     "type": "git",
