@@ -5,5 +5,11 @@ database.settings(settings);
 
 const databaseCollection = database.collection('posts');
 
+function getAllPosts(){
+    return databaseCollection.get();
+}
 
-module.exports = databaseCollection;
+module.exports = {
+    databaseCollection: databaseCollection,
+    getAllPosts: getAllPosts
+};
