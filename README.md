@@ -6,5 +6,5 @@ A Simple graphql tutorial on node js with grapqhl and firebase
 2. Run `npm install`
 3. Run `npm run start`
 
-For a detailed tutorial, checkout this [wiki](https://github.com/mtotodev05/node-graphql-tutorial/wiki/node-graphql-api-tutorial).
+For a detailed tutorial, checkout this [wiki](https://github.com/mtotodev05/node-graphql-tutorial/wiki/node-graphql-firestore-api-tutorial).
 
