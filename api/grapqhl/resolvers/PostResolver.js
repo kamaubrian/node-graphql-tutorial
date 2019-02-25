@@ -1,4 +1,4 @@
-const {messagesCollections,getAllPosts} = require('../../model/database');
+const {databaseCollection,getAllPosts} = require('../../model/database');
 
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
                 author: args.postInput.author,
                 date: args.postInput.date
             };
-            const savedPost = await messagesCollections.add(post);
+            const savedPost = await databaseCollection.add(post);
             return {
                 title: post.title,
                 description: post.description,
