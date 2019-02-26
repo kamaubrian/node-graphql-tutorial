@@ -35,12 +35,41 @@ describe('/Testing Get Capabilities', () => {
 });
 
 describe('/Testing Post Capabilities', () => {
+    let timeStamp = new Date().toString();
     let requestBody = {
         // language=GraphQL Schema
-        query:`
-        
+        query: `
+           mutation {
+                createPost(postInput:{author:"This is a test",title:"A Test",description:"It has been real",date:"${timeStamp}"}){
+                    title
+                    description
+                }
+           } 
         
         `
     };
 
-})
+    it('it should create a new Post', (done) => {
+        request(server)
+            .post('/api/v1/graphql')
+            .send(requestBody)
+            .expect(200, done);
+    })
+
+});
+
+describe('Testing Invalid Request Body', () => {
+    let requestBody = {
+        author: 'Kamau Brian',
+        title: 'This is an Invalid Request Body',
+        date: new Date().toString(),
+        description: 'This is very invalid'
+    };
+
+    it('it should throw an error on invalid request body',(done)=>{
+        request(server)
+            .post('/api/v1/graphql')
+            .send(requestBody)
+            .expect(400,done);
+    })
+});
