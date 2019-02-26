@@ -8,6 +8,7 @@ A Simple graphql tutorial on node js with grapqhl and firebase
 3. Run `npm install`
 4. Run `npm run start`
 5. `http://localhost:3000/api/v1/graphql`
+6. Use the provided graphiql interface provided to test the below requests.
 
 ### Sample Requests
 ```
