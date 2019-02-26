@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "8"
+dist: trusty
+before_install:
+  - openssl aes-256-cbc -K $encrypted_ed9918fab907_key -iv $encrypted_ed9918fab907_iv -in service-account.json.enc -out service-account.json -d
+  - mkdir -p api/config
+  - cp service-account.json api/config
+before_script: yarn install
+script: yarn test
