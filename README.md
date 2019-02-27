@@ -10,6 +10,9 @@ A Simple graphql tutorial on node js with grapqhl and firebase
 5. `http://localhost:3000/api/v1/graphql`
 6. Use the provided graphiql interface provided to test the below requests.
 
+
+
+
 ### Sample Requests
 ```
  /api/v1/graphql
@@ -36,6 +39,17 @@ A Simple graphql tutorial on node js with grapqhl and firebase
     
     
    
+```
+
+## Running Tests
+
+```
+yarn test
+
+    or
+    
+npm test    
+
 ```
 
 For a detailed tutorial, checkout this [wiki](https://github.com/mtotodev05/node-graphql-tutorial/wiki/node-graphql-firestore-api-tutorial).
